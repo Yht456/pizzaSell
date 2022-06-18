@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+*{
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  color: var(--blackTheme);
+}
+body{
+  background-color: #F1F1F1;
+  margin-right: 0;
+  margin-left: 0;
+  overflow-x: hidden;
+    margin-top: 1vw;
+}
+button{
+  border-radius: 0.2vw;
+}
+i, button{
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: #2980b9;
+}
+nav{
+  margin-right: 10%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+nav .overlayMenu{
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99;
+    display: none;
+    transition: .2s;
+}
+h1{
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.whiteText{
+    color: white;
+}
+.bold{
+    font-weight: bold;
+}
+.brownishBG{
+  background-color: var(--brownishTheme) !important;
+}
+.smallLine{
+  height: 4px !important;
+}
+.currentImgGal{
+  transform: translateX(0) !important;
+}
+.clickedBtn{
+    background: #d0d0d0 !important;
+}
+#error{
+    text-align: center;
+    color: #d43f21;
+    text-transform: capitalize;
+    margin: 0;
+}
+/***** VARIABLES *****/
+:root{
+  --yellowTheme:#E1AB1A;
+  --blackTheme:#0D1114;
+  --brownishTheme:#deb675;
+  --brownishThemeHover: #ab884f;
+    --widthAvatar:12vw;
+}
+/***** VARIABLES *****/
+
+/*****  TO MAKE THEM IN THE SAME LINE  *****/
+.notif{
+    position: fixed;
+    z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%,-150%);
+    background: #e1a912;
+    box-shadow: 0px 0px 10px rgb(121, 121, 121);
+    border-radius: 20px;
+    padding: 6px 21px;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+}
+.successAddedToBacket{
+    animation: displayElement;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+}
+@keyframes displayElement{
+    20%{
+        opacity: 1;
+        transform: translate(-50%,20%);
+    }
+    90%{
+        opacity: 1;
+        transform: translate(-50%,20%);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%,-150%);
+    }
+}
+.notif i{
+    color: white;
+    font-size: 1.3vw;
+}
+.notif p{
+    margin: 0;
+    margin-left: 10px;
+    text-transform: capitalize;
+    color: white;
+}
+nav .closeMobileMenu{
+    border: none;
+    background: none;
+    display: none;
+    margin-right: 13vw;
+}
+nav .closeMobileMenu i{
+    font-size: 8vw;
+    transition: .1s;
+}
+.closeMobileMenu i:hover{
+    color: var(--yellowTheme);
+}
+nav ul, nav .registerNavSide, nav h1{
+  align-self: center;
+  margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*****  TO MAKE THEM IN THE SAME LINE  *****/
+nav h1{
+    font-size: 1.8vw;/*new*/
+    color: var(--yellowTheme);
+    margin-top: 0;
+    font-family: 'Poppins', sans-serif;
+}
+nav h1 a{
+    color: var(--yellowTheme);
+    font-weight: 600;
+}
+nav ul{
+  list-style: none;
+  flex-basis: 50%;
+  display: inline-flex;
+  justify-content: space-around;
+  margin-top: 0;
+}
+nav ul li a{
+  color: var(--blackTheme);
+  font-family: 'poppins', sans-serif;
+  font-weight: 400;
+    white-space: nowrap;
+}
+.active a{
+  color: var(--yellowTheme);
+}
+nav ul > li{
+  transition: .2s;
+  border-bottom:var(--yellowTheme);
+    font-size: 1.1vw;/*new*/
+}
+.borderBottom{
+    width: 0%;
+    height: 2px;
+    background: #e1ab1a;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+@keyframes bottomBorder{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+nav .registerNavSide{
+    position: relative;
+}
+nav .registerNavSide i{
+  margin: 0;
+  margin-right: 10px;
+  font-size: 20px;
+    transition: .2s;
+}
+nav .registerNavSide i:hover{
+    color: var(--yellowTheme);
+}
+nav .registerNavSide i{
+        font-size: 1.4vw;
+    }
+/*Added*/
+nav .fa-cart-shopping{
+  margin-right: 0;
+}
+.registerNavSide  button.doorToMobileMenu{
+    display: none;
+    border: none;
+    background: none;
+}
+.registerNavSide button.doorToMobileMenu i{
+    font-size: 4vw;
+    transition: .2s;
+}
+.registerNavSide button.doorToMobileMenu i:hover{
+    color: var(--yellowTheme);
+}
+.registerNavSide .backet{
+    background: white;
+    padding: 16px;
+    box-shadow: 0 0 7px #646262;
+    position: fixed;
+    top: 4vw;
+    right: 11vw;
+    z-index: 98;
+    width: 30vw;
+    border-radius: 7px;
+    display: none;
+}
+.backet i.fa-xmark{
+    float: right;
+    position: relative;
+    right: -0.5vw;
+    font-size: 2vw;
+}
+.backet .products, .backet .firstLine{
+    clear: both;
+}
+.backet .products{
+    max-height: 20vw;
+    overflow-y: scroll;
+    margin-top: 3vw;
+    scrollbar-color: var(--yellowTheme) var(--blackTheme);
+    scrollbar-width: thin;
+}
+.products .element h2.pizzaType{
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.element .imgSection{
+    display: flex;
+}
+.priceQuantity{
+    margin-left: 1vw;
+}
+.priceQuantity p.price{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4vw;
+}
+.priceQuantity .CATNumPizza{
+    display: flex !important;
+    flex-direction: column;
+}
+.priceQuantity .deleteBtnProduct{
+    text-transform: uppercase;
+    color: #2980b9;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    padding: 0;
+}
+.element .priceQuantity .CATNumPizza button{
+    margin-right: 5px !important;
+}
+.CATNumPizza p.output{
+    border-color: #999;
+}
+.backet .totalPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 1.3vw;
+}
+.totalPrice > p{
+    margin: 0;
+}
+.totalPrice div.priceNumber p.numb, span.currency{
+    font-size: 1.6vw;
+    display: inline-block;
+    margin: 0;
+}
+.backet .proceedBtn{
+    border: none;
+    width: 100%;
+    padding: 1vw;
+    text-transform: capitalize;
+    font-size: 1.3vw;
+    background: var(--blackTheme);
+    color: white;
+    transition: .2s;
+}
+.backet .proceedBtn:hover{
+    color: var(--blackTheme);
+    background-color: white;
+    border: 1px solid var(--blackTheme);
+}
+div.ads{
+    width: 100%;
+    background: #c7c7c7c7;
+    text-align: center;
+    margin-top: 30px;
+    padding: 1.1vw;
+    position: relative;
+    
+}
+.ads p.adsContent{
+    font-weight: 300;
+    margin: 0;
+    text-transform: capitalize;
+    position: relative;
+    animation-name: scrollingText;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    left: 0;
+}
+@keyframes scrollingText{
+    0%{
+        left: 0;
+    }
+    50%{
+        left: 0;
+    }
+    70%{
+        left: 65vw;
+    }
+    70.000009%{
+        left: -65vw;
+    }
+    100%{
+        left: 0;
+    }
+}
+/*MEDIA SCREEN*/
+
+@media screen and (max-width: 900px){
+    nav h1{
+        font-size: 2.8vw;
+    }
+    nav ul > li{
+        font-size: 1.5vw;
+    }
+    /*nav .registerNavSide button,nav .registerNavSide i{
+        font-size: 1.4vw;
+    }*/
+}
+@media screen and (max-width: 700px){
+  nav{
+        margin:0 5%;
+        margin-top: 4vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav h1{
+        font-size: 5.8vw;
+    }
+     .registerNavSide button.regBtn{
+        display: none;
+    }
+    nav ul{
+        flex-direction: column;
+        align-items: start;
+        position: fixed;
+        background-color: white;
+        background-image: url(homePageAssets/mobileMenuBG.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 10vw;
+        top: 0;
+        width: 0;
+        height: 100%;
+        z-index: 99;
+        left: 0;
+        justify-content: start;
+        padding: 0 !important;
+        box-shadow: 0 0 12px #3e3e3e;
+        overflow: hidden;
+        transition: .2s;
+    }
+    nav ul li:first-child{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 8vw;
+    }
+    nav ul li button.closeMobileMenu, nav .overlayMenu{
+        display: block;
+    }
+    nav ul > li{
+        margin-bottom: 8vw;
+        margin-left: 10vw;
+        font-size: 4.5vw;
+        border: none !important;
+    }
+    .registerNavSide button.doorToMobileMenu{
+        display: block;
+        order: 3;
+    }
+    nav .registerNavSide{
+        flex-basis: auto;
+        text-align: auto;
+    }
+    nav .registerNavSide i{
+        font-size: 4vw;
+    }
+    div.borderBottom:first-child{
+    position: absolute;
+    bottom: 0;
+    }
+    .ads p.adsContent{
+        font-size: 2.6vw;
+    }
+    .openOverlayMenu{
+        width: 100% !important;
+    }
+    .openMobileMenu{
+        width: 55vw;
+    }
+    /*BACKET STYLE FOR PHONES*/
+    .registerNavSide .backet{
+        left: 47.8%;
+        transform: translateX(-50%);
+        width: 80vw;
+        top: 15vw;
+    }
+    .backet .products{
+        max-height: 100vw;
+    }
+    .backet i.fa-xmark{
+        right: -2vw;
+        font-size: 6vw;
+    }
+    .backet .proceedBtn{
+        font-size: 4vw;
+        padding: 2vw;
+    }
+    .products .element{
+        margin-bottom: 5vw;
+    }
+    .priceQuantity{
+        margin-left: 3vw;
+    }
+    .priceQuantity p.price{
+        margin-bottom: 2vw;
+        font-size: 4.4vw
+    }
+    .products .element .CATNumPizza .numberOfPizzas{
+        margin-bottom: 3vw;
+    }
+    .backet .CATNumPizza button{
+        font-size: 3vw;
+
+    }
+    .backet .CATNumPizza input.output{
+        font-size: 3.5vw;
+        width: 4wv;
+     }
+    .product .element button.deleteBtnProduct{
+        font-size: 3vw;
+    }
+    .element .priceQuantity .CATNumPizza button{
+        border-radius: 0;
+    }
+    .totalPrice > p{
+        font-size: 4vw;
+    }
+    .totalPrice div.priceNumber p.numb, span.currency{
+        font-size: 4.6vw;
+    }
+}
+.footerNotif{
+    font-size: 2vw;
+    color: white;
+    background: var(--blackTheme);
+    padding: 5vw 0;
+    text-align: center;
+    margin: 0;
+    text-transform: capitalize;
+}
